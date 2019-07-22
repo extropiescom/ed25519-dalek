@@ -7,7 +7,7 @@
 // Authors:
 // - isis agora lovecruft <isis@patternsinthevoid.net>
 
-//! ed25519 keypairs and batch verification.
+//! ed25519 keypairs and batch verification. 
 #[cfg(feature = "gen_key")]
 use core::default::Default;
 #[cfg(feature = "gen_key")]
