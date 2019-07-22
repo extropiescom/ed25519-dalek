@@ -19,7 +19,9 @@ use curve25519_dalek::digest::Digest;
 use curve25519_dalek::edwards::CompressedEdwardsY;
 use curve25519_dalek::scalar::Scalar;
 
+#[cfg(feature = "gen_key")]
 use rand::CryptoRng;
+#[cfg(feature = "gen_key")]
 use rand::Rng;
 
 use sha2::Sha512;
@@ -172,6 +174,7 @@ impl SecretKey {
     /// # Input
     ///
     /// A CSPRNG with a `fill_bytes()` method, e.g. `rand::OsRng`
+    #[cfg(feature = "gen_key")]
     pub fn generate<T>(csprng: &mut T) -> SecretKey
     where
         T: CryptoRng + Rng,

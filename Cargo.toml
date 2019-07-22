@@ -20,8 +20,9 @@ version = "1"
 default-features = false
 
 [dependencies.rand]
-version = "0.6"
+version = "0.5"
 features = ["i128_support"]
+default-features = false
 
 [dependencies.serde]
 version = "^1.0"
@@ -48,10 +49,13 @@ name = "ed25519_benchmarks"
 harness = false
 
 [features]
-default = ["std", "u64_backend"]
-std = ["curve25519-dalek/std", "rand/std", "sha2/std"]
-alloc = ["curve25519-dalek/alloc"]
-nightly = ["curve25519-dalek/nightly", "rand/nightly", "clear_on_drop/nightly"]
+gen_key = []
+embedded = ["u32_backend"]
+#default = ["std", "u64_backend"]
+#std = ["curve25519-dalek/std", "rand/std", "sha2/std"]
+#alloc = ["curve25519-dalek/alloc"]
+#nightly = ["curve25519-dalek/nightly", "rand/nightly", "clear_on_drop/nightly"]
+#default = ["u32_backend"]
 asm = ["sha2/asm"]
 yolocrypto = ["curve25519-dalek/yolocrypto"]
 u64_backend = ["curve25519-dalek/u64_backend"]

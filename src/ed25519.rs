@@ -8,10 +8,11 @@
 // - isis agora lovecruft <isis@patternsinthevoid.net>
 
 //! ed25519 keypairs and batch verification.
-
+#[cfg(feature = "gen_key")]
 use core::default::Default;
-
+#[cfg(feature = "gen_key")]
 use rand::CryptoRng;
+#[cfg(feature = "gen_key")]
 use rand::Rng;
 
 #[cfg(feature = "serde")]
@@ -28,8 +29,11 @@ pub use sha2::Sha512;
 use curve25519_dalek::digest::generic_array::typenum::U64;
 pub use curve25519_dalek::digest::Digest;
 
+#[cfg(feature = "gen_key")]
 use curve25519_dalek::constants;
+#[cfg(feature = "gen_key")]
 use curve25519_dalek::edwards::EdwardsPoint;
+#[cfg(feature = "gen_key")]
 use curve25519_dalek::scalar::Scalar;
 
 pub use crate::constants::*;
@@ -244,6 +248,7 @@ impl Keypair {
     /// The standard hash function used for most ed25519 libraries is SHA-512,
     /// which is available with `use sha2::Sha512` as in the example above.
     /// Other suitable hash functions include Keccak-512 and Blake2b-512.
+    #[cfg(feature = "gen_key")]
     pub fn generate<R>(csprng: &mut R) -> Keypair
     where
         R: CryptoRng + Rng,

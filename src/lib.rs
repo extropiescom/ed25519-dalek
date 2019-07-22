@@ -236,7 +236,7 @@
 //! # #[cfg(not(feature = "serde"))]
 //! # fn main() {}
 //! ```
-
+ 
 #![no_std]
 #![warn(future_incompatible)]
 #![warn(rust_2018_compatibility)]
@@ -250,6 +250,7 @@ extern crate std;
 extern crate clear_on_drop;
 extern crate curve25519_dalek;
 extern crate failure;
+#[cfg(feature = "gen_key")]
 extern crate rand;
 #[cfg(feature = "serde")]
 extern crate serde;
