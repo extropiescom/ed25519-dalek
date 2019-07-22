@@ -45,20 +45,20 @@ version = "0.2"
 # bincode = "^0.9"
 # criterion = "0.2"
 
-[[bench]]
-name = "ed25519_benchmarks"
-harness = false
+# [[bench]]
+# name = "ed25519_benchmarks"
+# harness = false
 
-[features]
-gen_key = []
-embedded = ["u32_backend"]
-#default = ["std", "u64_backend"]
-#std = ["curve25519-dalek/std", "rand/std", "sha2/std"]
-#alloc = ["curve25519-dalek/alloc"]
-#nightly = ["curve25519-dalek/nightly", "rand/nightly", "clear_on_drop/nightly"]
-#default = ["u32_backend"]
-asm = ["sha2/asm"]
-yolocrypto = ["curve25519-dalek/yolocrypto"]
-u64_backend = ["curve25519-dalek/u64_backend"]
-u32_backend = ["curve25519-dalek/u32_backend"]
-avx2_backend = ["curve25519-dalek/avx2_backend"]
+# [features]
+# # gen_key = []
+# # embedded = ["u32_backend"]
+# # #default = ["std", "u64_backend"]
+# # #std = ["curve25519-dalek/std", "rand/std", "sha2/std"]
+# # #alloc = ["curve25519-dalek/alloc"]
+# # #nightly = ["curve25519-dalek/nightly", "rand/nightly", "clear_on_drop/nightly"]
+# # #default = ["u32_backend"]
+# # asm = ["sha2/asm"]
+# # yolocrypto = ["curve25519-dalek/yolocrypto"]
+# # u64_backend = ["curve25519-dalek/u64_backend"]
+# # u32_backend = ["curve25519-dalek/u32_backend"]
+# # avx2_backend = ["curve25519-dalek/avx2_backend"]
